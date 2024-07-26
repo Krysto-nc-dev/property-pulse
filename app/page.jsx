@@ -4,7 +4,7 @@ import HomeProperties from '@/components/HomeProperties'
 import InfoBoxes from '@/components/InfoBoxes'
 
 
-const HomePage = async () => {
+const HomePage =  () => {
 
 
 
