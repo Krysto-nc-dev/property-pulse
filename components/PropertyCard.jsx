@@ -19,7 +19,7 @@ const PropertyCard = ({ property }) => {
       return `${rates.nightly.toLocaleString()} XPF/nuit`
     }
   }
-
+  
   return (
     <div className="bg-white rounded-xl shadow-md relative">
       <div className="relative w-full h-64">
@@ -73,7 +73,7 @@ const PropertyCard = ({ property }) => {
           {property.rates.monthly && (
             <p>
               <FaMoneyBill className="inline mr-2" />
-           Mois 
+              Mois
             </p>
           )}
         </div>
