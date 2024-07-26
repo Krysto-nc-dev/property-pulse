@@ -1,4 +1,4 @@
-import Footer from '@/components/Footer'
+
 import Hero from '@/components/Hero'
 import InfoBoxes from '@/components/InfoBoxes'
 
@@ -8,7 +8,7 @@ const HomePage = () => {
     <div>
     <Hero/>
     <InfoBoxes/>
-    <Footer/>
+   
     </div>
   )
 }
