@@ -7,6 +7,7 @@ import { fetchProperty } from '@/utils/requests';
 import PropertyHeaderImage from '@/components/PropertyHeaderImage';
 import { FaArrowLeft } from 'react-icons/fa';
 import PropertyDetails from '@/components/PropertyDetails';
+import Spinner from '@/components/Spinner';
 
 const PropertyPage = () => {
   const { id } = useParams();
@@ -31,7 +32,7 @@ const PropertyPage = () => {
   }, [id]);
 
   if (loading) {
-    return <p>Chargement de la propriété...</p>;
+    return <Spinner/>;
   }
 
   if (!property) {
