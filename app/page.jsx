@@ -8,7 +8,6 @@ const HomePage = () => {
     <div>
     <Hero/>
     <InfoBoxes/>
-   
     </div>
   )
 }
