@@ -1,25 +1,25 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from 'next/image';
+import Link from 'next/link';
 import {
   FaBath,
   FaBed,
   FaMapMarker,
   FaMoneyBill,
   FaRulerCombined,
-} from 'react-icons/fa'
+} from 'react-icons/fa';
 
 const PropertyCard = ({ property }) => {
   const getRateDisplay = () => {
-    const { rates } = property
+    const { rates } = property;
     if (rates.monthly) {
-      return `${rates.monthly.toLocaleString()} XPF/mois`
+      return `${rates.monthly.toLocaleString()} XPF/mois`;
     } else if (rates.weekly) {
-      return `${rates.weekly.toLocaleString()} XPF/semaine`
+      return `${rates.weekly.toLocaleString()} XPF/semaine`;
     } else if (rates.nightly) {
-      return `${rates.nightly.toLocaleString()} XPF/nuit`
+      return `${rates.nightly.toLocaleString()} XPF/nuit`;
     }
-  }
-  
+  };
+
   return (
     <div className="bg-white rounded-xl shadow-md relative">
       <div className="relative w-full h-64">
@@ -52,8 +52,7 @@ const PropertyCard = ({ property }) => {
           </p>
           <p>
             <FaRulerCombined className="inline mr-2" />
-            {property.square_feet}{' '}
-            <span className="md:hidden lg:inline">M²</span>
+            {property.square_feet} <span className="md:hidden lg:inline">m²</span>
           </p>
         </div>
 
@@ -82,9 +81,7 @@ const PropertyCard = ({ property }) => {
 
         <div className="flex flex-col lg:flex-row justify-between mb-4">
           <div className="flex align-middle gap-2 mb-4 lg:mb-0">
-            <i className="fa-solid fa-location-dot text-lg "></i>
             <FaMapMarker className="text-orange-700 mt-1" />
-
             <span className="text-orange-700">
               {property.location.city}, {property.location.state}
             </span>
@@ -98,7 +95,7 @@ const PropertyCard = ({ property }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PropertyCard
+export default PropertyCard;
