@@ -14,6 +14,9 @@ const UserSchema = new Schema(
     image: {
       type: String,
     },
+    googleId: {
+      type: String,
+    },
     bookmarks: [
       {
         type: Schema.Types.ObjectId,
