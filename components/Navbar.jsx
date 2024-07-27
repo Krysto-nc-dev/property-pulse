@@ -106,7 +106,11 @@ const Navbar = () => {
               <div className="flex items-center">
                 {providers &&
                   Object.values(providers).map((provider, index) => (
-                    <button key={index} onClick={() => signIn(provider.id)} className="flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2">
+                    <button
+                      key={index}
+                      onClick={() => signIn(provider.id)}
+                      className="flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
+                    >
                       <FaGoogle className="text-white mr-2" />
                       <span>Connexion ou Inscription</span>
                     </button>
@@ -184,6 +188,7 @@ const Navbar = () => {
                       role="menuitem"
                       tabIndex="-1"
                       id="user-menu-item-0"
+                      onClick={() => setIsProfileMenuOpen(false)}
                     >
                       Votre Profil
                     </Link>
@@ -193,10 +198,15 @@ const Navbar = () => {
                       role="menuitem"
                       tabIndex="-1"
                       id="user-menu-item-2"
+                      onClick={() => setIsProfileMenuOpen(false)}
                     >
                       Propriétés sauvegardées
                     </Link>
                     <button
+                      onClick={() => {
+                        setIsProfileMenuOpen(false)
+                        signOut()
+                      }}
                       className="block px-4 py-2 text-sm text-gray-700"
                       role="menuitem"
                       tabIndex="-1"
@@ -242,16 +252,18 @@ const Navbar = () => {
                 Ajouter une propriété
               </Link>
             )}
-            {!session && 
-                providers &&
-                  Object.values(providers).map((provider, index) => (
-                    <button key={index} onClick={() => signIn(provider.id)} className="flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2">
-                      <FaGoogle className="text-white mr-2" />
-                      <span>Connexion ou Inscription</span>
-                    </button>
-                  ))
-              
-      }
+            {!session &&
+              providers &&
+              Object.values(providers).map((provider, index) => (
+                <button
+                  key={index}
+                  onClick={() => signIn(provider.id)}
+                  className="flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
+                >
+                  <FaGoogle className="text-white mr-2" />
+                  <span>Connexion ou Inscription</span>
+                </button>
+              ))}
           </div>
         </div>
       )}
