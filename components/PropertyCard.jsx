@@ -9,6 +9,7 @@ import {
 } from 'react-icons/fa';
 
 const PropertyCard = ({ property }) => {
+ 
   const getRateDisplay = () => {
     const { rates } = property;
     if (rates.monthly) {
@@ -19,7 +20,6 @@ const PropertyCard = ({ property }) => {
       return `${rates.nightly.toLocaleString()} XPF/nuit`;
     }
   };
-
   return (
     <div className="bg-white rounded-xl shadow-md relative">
       <div className="relative w-full h-64">
